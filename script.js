@@ -10,7 +10,8 @@ let filterStatus = 'all';
 let spanCounters = document.querySelectorAll(".counters");
 let counterDiv = document.querySelector("#counter");
 let counted = false;
-// Scroll to Top Button
+
+// Scroll to Top Button && Update Counter
 
 window.onscroll = function () {
     if (this.scrollY >= 300) {
@@ -64,6 +65,7 @@ completedBtn.addEventListener("click", function () {
 });
 
 // Inline Editing on Double Click
+
 listContainer.addEventListener('dblclick', function (e) {
     if (e.target.tagName === "LI") {
         const originalText = e.target.firstChild.textContent.trim();
@@ -161,7 +163,9 @@ function updateCounter() {
     startCount(total, remaining, completed);
 
 }
+
 // Start counting
+
 function startCount(total, remaining, completed){
     spanCounters[0].textContent = 0;
     spanCounters[1].textContent = 0;
@@ -187,8 +191,10 @@ function startCount(total, remaining, completed){
         spanCounters[2].textContent++;
         }
     }, 100);
-} // like this
+}
+
 // Filter(all, completed, in-progress)
+
 function showTasks() {
     const savedData = localStorage.getItem("data");
     if (!savedData) return;

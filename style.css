@@ -1,0 +1,224 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+:root{
+    --toDoApp-bgColor: #ffffff;
+    --h2-color: #002765;
+    --main-bgColor: linear-gradient(100deg, #1fff01, #000000);
+    --log-in-bgColor: #1f4715;
+    --log-in-Color: #dce0db;
+    --log-in-bghoverColor: #329819;
+    --btn-bgColor: #e05243;
+    --btn-Color: #ffffff;
+    --btn-bghoverColor: #fa4834;
+}
+.dark-mode{
+    --toDoApp-bgColor: #000;
+    --h2-color: #ffffff;
+    --main-bgColor: #1e1e1e;
+    --log-in-bgColor: #ffffff;
+    --log-in-Color: #000000;
+    --log-in-bghoverColor: #c3c3c3;
+    --btn-bgColor: #9f9e9e;
+    --btn-Color: #000000;
+    --btn-bghoverColor: #c1c1c1;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: var(--main-bgColor);
+    padding: 10px;
+}
+.todo-app{
+    width: 100%;
+    max-width: 540px;
+    background: var(--toDoApp-bgColor);
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+.todo-app .ideas{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.todo-app .ideas h2{
+    color: var(--h2-color);
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+}
+.todo-app .ideas h2 img{
+    width: 30px;
+    margin-left: 10px;
+}
+#imgMode{
+    margin-left: 10px;
+    width: 40px;
+    cursor: pointer;
+}
+#log-in{
+    border: none;
+    outline: none;
+    padding: 13px 25px;
+    background-color: var(--log-in-bgColor);
+    color: var(--log-in-Color);
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 40px;
+    transition: all linear .4s;
+}
+#log-in:hover{
+    background-color: var(--log-in-bghoverColor);
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #edeef0;
+    margin-top: 1.5rem;
+    border-radius: 30px;
+    padding-left: 20px;
+}
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 10px;
+    font-weight: 14px;
+}
+#btn{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background-color: var(--btn-bgColor);
+    color: var(--btn-Color);
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+#btn:hover{
+    background-color: var(--btn-bghoverColor);
+}
+ul{
+    margin-top: 20px;
+}
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+.dark-mode ul li {
+    color: white;
+}
+ul li {
+    color: black;
+    transition: all ease .4s;
+}
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+.dark-mode ul li.checked{
+    color: #c8c8c8;
+}
+ul li.checked::before{
+    background-image: url(images/checked.png);
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+.dark-mode ul li span{
+    color: #8e8e8e;
+}
+ul li span:hover{
+    background-color: #edeef0;
+}
+ul li:hover{
+    transform: scale(1.01);
+}
+#counter{
+    margin-top: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dark-mode #counter{
+    color: white;
+}
+.dark-mode #offline{
+    color: white;
+}
+#offline{
+    color: red;
+}
+.up{
+    padding: 10px;
+    position: fixed;
+    right: -5%;
+    bottom: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: .5s;
+}
+.up img{
+    width: 30px;
+    height: 30px;
+}
+.up.show{
+    right: 5px;
+}
+.filter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+#all, #in-progress, #completed{
+    border: none;
+    outline: none;
+    background-color: #4d7747;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 40px;
+    padding: 13px 35px;
+    cursor: pointer;
+}
+.dark-mode #all, .dark-mode #in-progress, .dark-mode #completed{
+    background-color: rgb(77, 77, 77);
+    color: white;
+}
+#all:hover, #in-progress:hover, #completed:hover{
+    background-color: #4a9240;
+}
